@@ -1,0 +1,910 @@
+/*!
+ * Betagrafica V.01
+ *
+ * Copyright 2012 Betagrafica,
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * @rokdos
+ */
+
+@import url('reset.css') screen;
+/*@import url('layout.css') screen;*/
+@import url('plugins.css') screen;
+@import url('../fonts/fonts.css') screen;
+
+/*--------------------------------------------------------------
+                            THEME
+--------------------------------------------------------------*/
+.page{
+    padding-bottom: 120px;
+    position: relative;
+}
+/*margin*/
+.grid10{
+    margin-bottom: 10px;
+}
+.grid20{
+    margin-bottom: 20px;
+}
+
+.grid30{
+    margin-bottom: 30px;
+}
+
+.grid40{
+    margin-bottom: 40px;
+}
+/*Padding*/
+.grid-in10{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.grid-in20{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.grid-in30{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.grid-in40{
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+/*cases*/
+.fullwidth{
+    width: 100%;
+}
+.mLR0{
+    margin-left: 0;
+    margin-right: 0;
+}
+
+ /*-------landing-page*/
+
+/*header*/
+.header{
+    width: 100%;
+    height: 70px;
+    position: relative;
+    top: 0;
+    left: 0;
+    border-bottom: 1px solid #ddd;
+    padding-top: 30px;
+    box-shadow: 0 1px 0 rgba(255,255,255,.5);
+}
+/*loginbar*/
+.header ul.session{
+    clear: left;
+    position: relative;
+    height: 15px;
+    width: 100%;
+    text-align: right;
+    top: -5px;
+}
+.header ul.session li{
+    display: inline;
+    margin: 0 2px;
+    font-size: 14px;
+    color: #888;
+    text-shadow: 0px 1px 0px #f1f1f1;
+}
+
+.header ul.session li.join,
+.header ul.session li.sign-in{
+    cursor: pointer;
+}
+.header ul.session li.join:hover,
+.header ul.session li.sign-in:hover{
+    color: #333;
+    text-shadow: none;
+}
+/*logo*/
+.header #logo{
+    height: 50px;
+    width: 50px;
+    background: #ED1E4C;
+    position: relative;
+    left: 0;
+    top: 0;
+    float: left;
+    cursor: pointer;
+}
+
+.header #logo p{
+    font-size: 2.4em;
+    color: #FFF;
+    position: absolute;
+    top: -1px;
+    left: 13px;
+    text-shadow: 0px 1px 1px #fff;
+}
+
+.header h1.logo{
+    color: #5F5E60;
+    float: left;
+    font-size: 50px;
+    top: 9px;
+    position: relative;
+    left: 15px;
+}
+
+/*footer*/
+
+/*landing-page-elemnts*/
+.initial{
+    background-image:url('../images/presentation.png');
+    background-size: cover;
+    height: 490px;
+ }
+span.text-intro{
+  }
+span.text-intro h5{
+    color: #666666;
+    font-size: 28px;
+}
+span.text-intro p{
+    font-size: 15px;
+    color: #666666;
+    line-height: 24px;
+}
+span.text-intro .btn-zone{
+    clear: left;  
+    width: 100%;  
+    text-align: center;
+    margin: 5px 0;
+}
+span.text-intro .btn-first-join{
+    padding: 20px 45px;
+    font-size: 24px;
+    clear: right;
+}
+
+/*-------dashboard*/
+/*estado*/
+.estado{
+    width: 320px;
+    height: 50px;
+    overflow: hidden;
+    left: 10px;
+    top: 2px;
+    position: relative;
+    float: left;
+}
+.estado p.welcome{ 
+    font-size: 27px;
+    line-height: 25px;
+    color: #5F5E60;
+    font-family: 'museosans100';
+}
+.estado p.welcome em{
+    color:#ED1E4C;
+}
+
+/*userpanel*/
+.user-panel{
+    width: 65px;
+    height: 50px;
+    background: #999;
+    float: right;
+    position: relative;
+    right: 0px;
+}
+
+.user-panel .my-notification{
+    width: 50px;
+    height: 50px;
+    background: #ED1E4C;
+    position: relative;
+    float: left;
+    text-align: center;
+}
+.user-panel .my-notification p.notification-n{
+    font-family: 'museosans500';
+    color: #fff;
+    font-size: 20px;
+    position: relative;
+    top: 12px;
+    left: 0;
+}
+
+.user-panel .my-avatar{
+    width: 50px;
+    height: 50px;
+    background: #999;
+    position: relative;
+    float: left;
+    text-align: center; 
+    overflow: hidden;
+}
+.user-panel .my-avatar img{}
+/*user dropdown*/
+.user-panel .my-options{
+    background-color: #ddd;
+    width: 15px;
+    float: right;
+    height: 50px;
+}
+.user-panel .my-options:hover{
+    background-color: #ccc;
+}
+.my-options .dropdown{
+    height: 100%;
+    list-style: none;
+}
+.my-options .dropdown .dropdown-toggle{
+font-size: 0px;
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+float: left;
+margin: 0;
+padding: 38px 2px 5px 2px;
+}
+.my-options .dropdown .dropdown-toggle{
+}
+.my-options .caret {
+margin: 0;
+}
+
+.my-options  .caret {
+display: inline-block;
+width: 0;
+height: 0;
+vertical-align: top;
+border-top: 5px solid #444;
+border-right: 5px solid transparent;
+border-left: 5px solid transparent;
+content: "";
+}
+.dropdown-menu {
+position: absolute;
+top: 100%;
+left: 0;
+z-index: 1000;
+display: none;
+float: left;
+min-width: 160px;
+padding: 0;
+margin: 0px 0 0;
+list-style: none;
+background-color: white;
+border:0;
+
+-webkit-background-clip: padding-box;
+-moz-background-clip: padding;
+background-clip: padding-box;
+}
+.dropdown-menu li a{
+    padding: 12px 50px 12px 15px;
+    color: #666;
+}
+.dropdown-menu .divider{
+    padding: 0;
+    margin: 0;
+    border-bottom:0;
+}
+.dropdown-menu li > a:hover, .dropdown-menu li > a:focus, .dropdown-submenu:hover > a {
+color: #333;
+text-decoration: none;
+background-color: #e5e5e5;
+}
+
+/*Create Btn*/
+.create{
+    padding:0;
+    margin:0;
+    line-height: 30px;
+}
+.create .create-btn{
+    width: 30px;
+    height: 30px;
+    background-color:#999;
+    float: left;
+    margin: 0 10px 0 0;
+    padding:0;
+    text-align: center;
+    font-size: 30px;
+ }
+
+/*sections general*/
+ul.sections{
+    height: 30px;
+    margin-bottom:50px;
+}
+ul.sections li{
+    float: left;
+    height: 30px;
+    width: 30px;
+    margin-right:10px;
+    text-align: center;
+    vertical-align: middle;
+    color:#fff;
+    cursor: pointer;
+    overflow: hidden;;
+}
+ul.sections li a{
+    color: #fff;
+    opacity: 0;
+}
+ul.sections li.sep{
+    width: 6px;
+    margin: 0;
+    position: relative;
+    left: -5px;
+    top: 5px;
+    color: #ccc;
+}
+ul.sections li.activity{
+    background-color: #7AC943;
+    background-image:url('../images/activity.png');
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+}
+ul.sections li.inspiration{
+    background-color:#FF931E;
+    background-image:url('../images/inspiration.png');
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+}
+ul.sections li.my-works{
+    background-color:#D4145A;
+}
+ul.sections li.my-messages{
+    background-color:#D4145A;
+}
+/*Work Objects*/
+body.project{
+    padding-bottom: 220px;
+}
+.work-object{
+    min-height: 320px;
+    background: #FFF;
+    position: relative;
+    display: block;
+    margin-bottom: 40px;
+    border: 1px solid #fff;
+
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+    -webkit-transition: all .1s;
+    -moz-transition: all .1s;
+    -ms-transition: all .1s;
+    -o-transition: all .1s;
+    transition: all .1s;
+    webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+ 
+.work-object .work-cover{
+    width: 100%;
+    height: 270px;
+    overflow: hidden;
+    position: relative;
+    background: whiteSmoke;
+    clear: left;
+    cursor: pointer;
+}
+.work-object .work-cover .image{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-position: 50% 50%;
+    background-size: cover;
+}
+
+.work-object .activity{
+    height: 100%;
+    width: 100%;
+    position: relative;
+    clear: left;
+}
+
+.work-object .activity .user-activity{
+    font-size: .8em;
+    margin: 15px 15px 15px;
+    overflow: hidden;
+    width: 280px;
+    max-height: 40px;
+    text-shadow:0 1px 0px rgba(0,0,0,.12);
+}
+
+.work-object .activity .user-activity a.user{
+    float: left;
+    margin: 0;padding: 0;
+    color: #ED1E4C;
+}
+.work-object .activity .user-activity p.action{
+    float: left;
+    margin: 0 0 0 5px;padding: 0;
+    color:#818180;
+}
+.work-object .activity .user-activity a.title{
+    float: left;
+    margin: 0 0 0 5px;padding: 0;
+}
+.work-object:hover .activity .user-activity a.title{
+    color: #333;
+}
+
+/*Project single*/
+.project-presentation{
+    position: relative;
+    min-height: 650px;
+}
+.project-cover{
+    height: 450px;
+    background-size: cover;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-color: #f2f2f2;
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+.project-description{
+    padding-bottom: 30px;
+}
+
+.project-info{
+    position: relative;
+    top: 315px;
+    z-index: 2;
+    background: #fff;
+    background-color: rgba(255,255,255,.9);
+    left: -30px;
+    padding-left: 30px;
+    padding-right: 15px;
+    box-shadow: 0 1px 5px -2px rgba(0,0,0,.3);
+}
+.project-info .info-container{
+    padding: 15px;
+    position: relative;
+}
+.project-item-container{
+    margin: 0 0 60px;
+    position: relative;
+    float: left;
+}
+.author{
+    position: relative;
+    margin-bottom: 10px;
+    opacity: .9;
+    margin-top: 30px;
+    height: 30px;
+}
+.author:hover{
+    opacity: 1;
+}
+.user-avatar{
+    height: 30px;
+    width: 30px;
+    position: relative;
+    float: left;
+    border-radius: 10px;
+    overflow: hidden;
+    float: left;
+    margin-right: 10px;
+}
+.project-author img,.image-100{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.author .user-info{
+    position: absolute;
+;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, .4);
+}
+.light{
+    color: #ED1E4C;
+    font: inherit;
+}
+.author .user-info .username{
+    padding: 0;
+    float: left;
+    top: 4px;
+    position: relative;
+}
+
+.project-item{
+    margin-bottom: 30px;
+    min-height: 100px;
+    background-size: cover;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    line-height: 0;
+    text-align: center;
+    position: relative;
+    border-radius: 3px;
+}
+
+.project-image{
+    padding: 0;
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+.fullscreen-icon{
+    height: 30px;
+    width: 30px;
+    background-image: url(../images/fullscreen.svg);
+    background-size: cover;
+    position: relative;
+    top: -60px;
+    right: 0;
+    float: right;
+    opacity: .3;
+    margin: 0;
+    padding: 0;
+}
+.fullscreen-icon:hover{
+    opacity: .6;
+}
+
+.item-info{
+}
+.item-title{
+    text-shadow: 0 1px 1px rgba(0, 0, 0, .2);
+ }
+.item-description{
+    color: #777;
+}
+
+/*profile*/
+.user-info{
+    cursor: pointer;
+}
+.send-message{
+    height: 30px;
+    width: 30px;
+    background-image: url(../images/message.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: .5;
+    position: relative;
+ }
+.send-message:hover{
+    opacity: .7;
+}
+.user-presentation{
+position:relative;
+    
+margin-bottom: 30px;
+}
+.user-logo{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 50%;
+    margin-left: -50px;
+    z-index: 99;
+    top: 50%;
+    margin-top: -50px;
+    text-align: center;
+}
+.user-cover{
+    height: 450px;
+    background-size: cover;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-color: #f2f2f2;
+    position: relative;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.user-biography{
+    position: relative;
+    height: 100px;
+ 
+    margin-top: 20px;
+}
+
+
+/*Edit Profile Settings*/
+ 
+.editprofile input{
+    height: 30px;
+    padding: 5px 0 5px 10px;
+    font-size: 22px;
+    color: #444;
+    line-height: 22px;
+    border-bottom: 1px solid #eee;
+}
+.editprofile input:focus,
+.editprofile textarea:focus
+{
+     border-bottom: 1px solid #ddd;
+}
+
+.editprofile textarea{
+    height: 120px;
+    padding: 5px 0 5px 10px;
+    font-size: 22px;
+    color: #444;
+    line-height: 24px;
+    border-bottom: 0px;
+    border-bottom: 1px solid #eee;
+}
+
+.relative{
+    position: relative;
+    position: relative!important;
+}
+
+.my-avatar{
+    width: 100px;
+    height: 100px;
+    background: #ccc;
+    border-radius: 3px;
+    float: left;
+}
+.editprofile .upload-img {
+    left: 20px;
+    clear: right;
+    top: 0;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+.upload-avatar-url{
+    position: relative;
+    left: 20px;
+    float: left;
+}
+
+.my-cover{
+    height: 200px;
+    background: #ccc;
+    border-radius: 3px;
+}
+
+input.save{
+    color: #FFF;
+    height: 60px;
+    font-size: 20px;
+    border: 0;
+}
+
+input[type="file"]{
+    font-size: 13px;
+    border: 0;
+}
+.insert-alternatives{
+    position: relative;
+    top: 10px;
+}
+
+.insert-alternatives .or{
+    left: 8px;
+    position: relative;
+    top: 10px
+}
+
+.editprofile .insert-alternatives .upload-img {
+    left: 10px;
+    clear: right;
+    top: 9px;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+
+.upload-img.pull-left.upload-cover{
+    left: -10px;
+    top: -6px;
+}
+.upload-cover-url{
+    left: 0px;
+    position: relative;
+    width: 210px;
+}
+
+/*create-project*/
+.create-project{}
+
+
+.single-image-project{
+    background: #fff;
+    width: 100%;
+    height: 300px;
+    padding: 50px 50px 0 0px;
+}
+
+.create-project .thumbnail{
+    height:200px;
+    background-color: #eee;
+}
+
+input.upload-img{
+    position: relative;
+    color:transparent;
+    color: rgba(255,255,255,0);
+    left: 30px;
+    width: 140px;
+}
+
+.conditions.muted{
+    position: relative;
+    top: 10px;
+ }
+
+.create-project .project-title{
+    height: 60px;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0 1px 0 rgba(255,255,255,.5);
+    font-size: 50px;
+    line-height: 50px;
+    font-family: 'museosans100';
+    padding:0 10px;
+    margin:0 0 10px;
+    color: #3A3E47;
+}
+
+.create-project .project-title:focus{
+    border-bottom: 1px solid #bbb;
+    box-shadow: 0 0 0 rgba(255,255,255,0);
+    outline: -webkit-focus-ring-color auto 0px;
+}
+
+.create-project .project-description{
+    min-height: 77px;
+    background: rgba(255,255,255,.2);
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 0 rgba(255,255,255,.5);
+    font-size: 1.2em;
+    line-height: 1.4em;
+    font-family: 'museosans100';
+    padding:10px;
+    margin:0 0 10px;
+    color: #3A3E47;
+    vertical-align: bottom;
+    border-radius: 3px;
+}
+
+.create-project .project-description:focus{
+    border: 1px solid #bbb;
+}
+
+.create-project small{
+    margin: 0 0 20px 0;
+}
+
+.create-project .publish{}
+
+.add-image{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    height: 20px;
+    font-size: 18px;
+}
+/*image-title*/
+.create-project .image-title{
+    height: 40px;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0 1px 0 rgba(255,255,255,.5);
+    font-size: 22px;
+    line-height: 50px;
+    font-family: 'museosans100';
+    padding:0 10px;
+    margin:0 0 10px;
+    color: #3A3E47;
+}
+
+.create-project .image-title:focus{
+    border-bottom: 1px solid #bbb;
+    box-shadow: 0 0 0 rgba(255,255,255,0);
+    outline: -webkit-focus-ring-color auto 0px;
+}
+
+.create-project .image-description{
+    min-height: 97px;
+    background: rgba(255,255,255,.2);
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 0 rgba(255,255,255,.5);
+    font-size: 1.2em;
+    line-height: 1.4em;
+    font-family: 'museosans100';
+    padding:10px;
+    margin:0 0 10px;
+    color: #3A3E47;
+    vertical-align: bottom;
+    border-radius: 3px;
+}
+
+.create-project .image-description:focus{
+    border: 1px solid #bbb;
+}
+
+
+
+.horizontal-line{
+    height: 1px;
+    background-color: #eee;
+    box-shadow: 0 1px 0 rgba(255,255,255,1);
+    margin: 30px 0;
+}
+
+.create-project .btn-success{
+    height: 60px;
+    font-size: 20px;
+}
+
+/*
+height: auto;
+padding: 60px 0 50px;
+border-radius: 3px;
+background: white;
+box-shadow: 0 1px 3px rgba(0, 0, 0, .2);
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Behavior*/
+.shadow{
+    -webkit-box-shadow: 0 30px 17px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+.hover:hover{
+    -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 0 8px rgba(0,0,0,0.2);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    -webkit-transition: all .1s;
+    -moz-transition: all .1s;
+    -ms-transition: all .1s;
+    -o-transition: all .1s;
+    transition: all .1s;
+}
+.transition-1s{
+    -webkit-transition: all .1s;
+    -moz-transition: all .1s;
+    -ms-transition: all .1s;
+    -o-transition: all .1s;
+    transition: all .1s;
+}
+.transition-2s{
+    -webkit-transition: all .2s;
+    -moz-transition: all .2s;
+    -ms-transition: all .2s;
+    -o-transition: all .2s;
+ion: all .2s;
+}
