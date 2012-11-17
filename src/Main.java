@@ -10,6 +10,7 @@ import org.restlet.routing.Router;
 import Servicios.AuthenticationResource;
 import Servicios.PortfoliosResource;
 import Servicios.SettingsResource;
+//import Servicios.UploadResource;
 import Servicios.UserResource;
 import Servicios.UsersResource;
 
@@ -17,8 +18,7 @@ import Servicios.UsersResource;
 public class Main extends Application {
 	// Ubicación para la raíz del sitio.
 	//public static final String ROOT_URI = "file:///home/gabo/Documentos/betagrafica-app/files";
-	//public static final String ROOT_URI = "file:///home/ernesto/workspace/betagrafica-app/files";
-	public static final String ROOT_URI = "file:///home/gustavo/workspace/betagrafica-app/files";
+	public static final String ROOT_URI = "file:///home/ernesto/workspace/betagrafica-app/files";
 	
 	public Restlet createInboundRoot(){
 		Directory dir = new Directory(getContext(),ROOT_URI);
