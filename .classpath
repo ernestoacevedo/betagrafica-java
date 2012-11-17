@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry kind="lib" path="/media/HDD/Dropbox/ICi526 (1)/material/activejdbc-1.5-20120529.223439-6.jar"/>
+	<classpathentry kind="lib" path="/media/HDD/Dropbox/ICi526 (1)/material/activejdbc-instrumentation-1.5-20120529.223552-8.jar"/>
+	<classpathentry kind="lib" path="/media/HDD/Dropbox/ICi526 (1)/material/javalite-common-1.5-20120529.223708-8.jar"/>
+	<classpathentry kind="lib" path="/media/HDD/Dropbox/ICi526 (1)/material/javassist.jar"/>
+	<classpathentry kind="lib" path="/media/HDD/Dropbox/ICi526 (1)/material/JSON-java.jar"/>
+	<classpathentry kind="lib" path="/media/HDD/Dropbox/ICi526 (1)/material/mysql-connector-java-5.1.21-bin.jar"/>
+	<classpathentry kind="lib" path="/media/HDD/Dropbox/ICi526 (1)/material/org.restlet.ext.json.jar"/>
+	<classpathentry kind="lib" path="/media/HDD/Dropbox/ICi526 (1)/material/org.restlet.jar"/>
+	<classpathentry kind="lib" path="/media/HDD/Dropbox/ICi526 (1)/material/slf4j-api-1.6.6.jar"/>
+	<classpathentry kind="lib" path="/media/HDD/Dropbox/ICi526 (1)/material/slf4j-simple-1.6.6.jar"/>
+	<classpathentry kind="lib" path="/home/ernesto/workspace/betagrafica-app/lib/commons-fileupload-1.2.2.jar"/>
+	<classpathentry kind="lib" path="/home/ernesto/workspace/betagrafica-app/lib/org.restlet.ext.fileupload-1.0.8.jar"/>
+	<classpathentry kind="lib" path="/home/ernesto/workspace/betagrafica-app/lib/javax.servlet.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
