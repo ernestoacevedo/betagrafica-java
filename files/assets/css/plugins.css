@@ -1,0 +1,99 @@
+/*	--------------------------------------------------
+	Reveal Modals
+	-------------------------------------------------- */
+		
+	.reveal-modal-bg { 
+		position: fixed; 
+		height: 100%;
+		width: 100%;
+		background: #000;
+		background: rgba(0,0,0,.8);
+		z-index: 100;
+		display: none;
+		top: 0;
+		left: 0; 
+		}
+	
+	.reveal-modal {
+		visibility: hidden;
+		top: 60px; 
+		left: 50%;
+		margin-left: -300px;
+		width: 520px;
+		background: #f9f9f9;
+		position: absolute;
+		z-index: 101;
+		padding: 30px 70px 35px 50px;
+		box-shadow: 0 10px 15px -5px rgba(0,0,0,.5);
+}
+		
+	.reveal-modal.small 		{ width: 200px; margin-left: -140px;}
+	.reveal-modal.medium 		{ width: 400px; margin-left: -240px;}
+	.reveal-modal.large 		{ width: 600px; margin-left: -340px;}
+	.reveal-modal.xlarge 		{ width: 800px; margin-left: -440px;}
+	
+	.reveal-modal .close-reveal-modal {
+		font-size: 40px;
+		line-height: .5;
+		position: absolute;
+		top: 20px;
+		right: 20px;
+		color: #aaa;
+		text-shadow: 0 -1px 1px rbga(0,0,0,.6);
+		font-weight: normal;
+		cursor: pointer;
+} 
+
+	.reveal-modal p {
+		color: #71717F;
+		font-size: 18px;
+		margin: 0 0 40px;
+		padding: 0px 0 0;
+	
+}
+
+	.reveal-modal h6 {
+		color: #343434;
+		font-size: 18px;
+		margin: 0 0 5px;
+		padding: 0px 0 0;
+	
+		float: left;
+		text-align: right;
+		width: 190px;
+}
+
+	.reveal-modal input{
+		height: 30px;
+		width: 400px;
+		margin: 0px 0 15px;
+		color: #666;
+		font-size: 18px;
+		padding: 5px 0px 0px;
+		background: transparent;
+	
+		position: relative;
+		top: -13px;
+		left: 15px;
+}
+	
+	.reveal-modal .btn-zone{
+	    clear: left;
+	    width: 101%;
+	    text-align: right;
+	    position: relative;
+	    margin: -10px 0 10px;
+}
+	.reveal-modal .loader{
+		display: inline-block;
+		width: 16px;
+		height: 16px;
+		background: url('../images/loader-w.gif')0 50% no-repeat;
+		border: none;
+		outline: none;
+		text-indent: -999em;
+		overflow: hidden;
+		bottom: 17px;
+		right: 150px;
+		position: absolute;
+}
