@@ -1,5 +1,6 @@
 
 
+import org.javalite.instrumentation.Instrumentation;
 import org.restlet.Application;
 import org.restlet.Component;
 import org.restlet.Restlet;
@@ -7,18 +8,19 @@ import org.restlet.data.Protocol;
 import org.restlet.resource.Directory;
 import org.restlet.routing.Router;
 
-import Servicios.AuthenticationResource;
-import Servicios.PortfoliosResource;
-import Servicios.SettingsResource;
-import Servicios.UserResource;
-import Servicios.UsersResource;
+import servicios.AuthenticationResource;
+import servicios.PortfoliosResource;
+import servicios.SettingsResource;
+import servicios.UserResource;
+import servicios.UsersResource;
+
 
 
 public class Main extends Application {
 	// Ubicación para la raíz del sitio.
 	//public static final String ROOT_URI = "file:///home/gabo/Documentos/betagrafica-app/files";
-	//public static final String ROOT_URI = "file:///home/ernesto/workspace/betagrafica-app/files";
-	public static final String ROOT_URI = "file:///home/gustavo/workspace/betagrafica-app/files";
+	public static final String ROOT_URI = "file:///home/ernesto/workspace/betagrafica-app/files";
+	//public static final String ROOT_URI = "file:///home/gustavo/workspace/betagrafica-app/files";
 	
 	public Restlet createInboundRoot(){
 		Directory dir = new Directory(getContext(),ROOT_URI);
@@ -50,7 +52,13 @@ public class Main extends Application {
 	}
 	
 	public static void main(String[] args) throws Exception {
-		MakeInstrumentation.make();
+		try{
+			Instrumentation instrumentation = new Instrumentation();
+			instrumentation.setOutputDirectory(ClassLoader.getSystemResource("").getPath());
+			instrumentation.instrument();
+		}catch(Exception e){
+			e.printStackTrace();
+		}
 		Component component = new Component();
 		component.getServers().add(Protocol.HTTP,9000);
 		component.getClients().add(Protocol.FILE);
