@@ -36,30 +36,7 @@ public class UserResource extends DBResource{
 			}
 			return json.toString();
 		}
-	} 
-	
-	/*
-	@Get("html")
-	public Representation mostrar(){
-		String username = getRequest().getAttributes().get("username").toString();
-		User u = User.findFirst("username = ?",username);
-		String userdata = u.toJson(true,"username","name","lastname","bio","phone","email","imgpath","coverpath");
-		if(u!=null){
-			Map<String, Object> dataModel = new TreeMap<String, Object>();
-			dataModel.put("username",null);
-	        dataModel.put("contacts",null);
-	        dataModel.put("resourceRef", getRequest().getResourceRef());
-	        dataModel.put("rootRef", getRequest().getRootRef());
-
-	        File templateDir = new File("/home/ernesto/workspace/betagrafica-app/files/templates");
-            Configuration fmc = new freemarker.template.Configuration();
-            
-            TemplateRepresentation rep = new TemplateRepresentation("profile.html",fmc,dataModel, MediaType.TEXT_HTML); 
-	        
-	        return rep;
-		}
-		return null;
-	}*/
+	}
 	
 	@Post
 	public String crear(Representation entity){

@@ -28,17 +28,22 @@
 	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 	<script>
-			$(document).ready(function(){
-				var user = $.cookie('User_username');
-				if(user==null){
-					location.href = "/";
-				}
-				else{
-					$('.estado').html('<p class="welcome">Hola <em>'+user+'</em>,<br>bienvenid@ a casa :)</p>');
-				}
-				
+		$(document).ready(function(){
+			var user = $.cookie('User_username');
+			if(user==null){
+				location.href = "/";
+			}
+			else{
+				$('.estado').html('<p class="welcome">Hola <em>'+user+'</em>,<br>bienvenid@ a casa :)</p>');
+			}
+			$.get("/user/"+user,function(data){
+				var userdata = JSON.parse(data);
+				$('.my-avatar img').attr('src',userdata.imgpath);
+				var dir_user = $('#menu-profile').attr('href');
+				$('#menu-profile').attr('href',dir_user+'/'+$.cookie('User_username'));
 			});
-			</script>
+		});
+	</script>
 
 </head>
 
@@ -57,17 +62,16 @@
 					</a>
 					<ul class="dropdown-menu pull-right" role="menu" aria-labelledby="drop">
 						<li>
-							<a class="settings" href="dashboard.html">Dashboard</a>
-						</li>
-
-						<li>
-							<a class="settings" href="profile.html">Perfil</a>
+							<a id="menu-dashboard" class="settings" href="/dashboard">Dashboard</a>
 						</li>
 						<li>
-							<a class="share" tabindex="-1" href="#share">Compartir Portafolios</a>
+							<a id="menu-profile" class="settings" href="/profile">Perfil</a>
 						</li>
 						<li>
-							<a class="settings" tabindex="-1" href="settings.html" >Configuración</a>
+							<a id="menu-share" class="share" tabindex="-1" href="#share">Compartir Portafolios</a>
+						</li>
+						<li>
+							<a id="menu-settings" class="settings" tabindex="-1" href="/settings" >Configuración</a>
 						</li>
 						<li class="divider"></li>
 						<li>
@@ -97,10 +101,10 @@
 							</div>
 						</div>
 						<div class="span6">
-							<input class="span6 grid20 project-title" placeholder="Titulo de tu proyecto" maxlength="35"/>
+							<input id="portfolio-title" class="span6 grid20 project-title" placeholder="Titulo de tu proyecto" maxlength="35"/>
 							<small class="muted pull-right">35 max</small>
 
-							<textarea row="2" class="span6 grid20 project-description" placeholder="Escribe aquí una pequeña descripción de tu proyecto" maxlength="140"></textarea>
+							<textarea id="portfolio-description" row="2" class="span6 grid20 project-description" placeholder="Escribe aquí una pequeña descripción de tu proyecto" maxlength="140"></textarea>
 							<small class="muted pull-right">140 max</small>
 						</div>
 					</div>
@@ -147,7 +151,7 @@
 				<div class="horizontal-line span12"></div>
 
 				<div class="span4 offset4">
-  					<input class="span4 btn btn-success" type="submit" value="Publicar">
+  					<input id="create-button" class="span4 btn btn-success" value="Publicar">
  				</div>
 
 
