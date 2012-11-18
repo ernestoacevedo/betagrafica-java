@@ -28,10 +28,12 @@ public class Main extends Application {
 		Directory portfolio = new Directory(getContext(),ROOT_URI);
 		Directory profile = new Directory(getContext(),ROOT_URI);
 		Directory settings = new Directory(getContext(),ROOT_URI);
+		Directory create = new Directory(getContext(),ROOT_URI);
 		settings.setIndexName("settings");
 		portfolio.setIndexName("portfolio");
 		dashboard.setIndexName("dashboard");
 		profile.setIndexName("profile");
+		create.setIndexName("create");
 		dir.setListingAllowed(true);
 		Router router = new Router(getContext());
 		router.attachDefault(dir);
@@ -44,9 +46,11 @@ public class Main extends Application {
 		router.attach("/portfolio",portfolio);
 		router.attach("/settings",settings);
 		router.attach("/profile/{username}",profile);
+		router.attach("/create",create);
 		router.attach("/login",AuthenticationResource.class);
 		//router.attach("/upload",UploadResource.class);
 		router.attach("/update",SettingsResource.class);
+		
 
 		return router;
 	}

@@ -87,13 +87,14 @@ public class UserResource extends DBResource{
 	public String actualizar(Representation entity){
 		Form form = new Form(entity);
 		User u = (User)User.findFirst("username = ?",form.getFirstValue("username"));
-		u.set("firstname",form.getFirstValue("firstname"));
-		u.set("lastname",form.getFirstValue("lastname"));
-		u.set("location",form.getFirstValue("location"));
-		u.set("bio",form.getFirstValue("bio"));
-		u.set("phone",form.getFirstValue("phone"));
-		u.set("email",form.getFirstValue("email"));
-		if(u.saveIt()){//Si se actualizo correctamente
+		if(u!=null){//Se encontró el usuario
+			// actualiza cada campo
+			User.update("firstname=?","username=?",form.getFirstValue("firstname"),form.getFirstValue("username"));
+			User.update("lastname=?","username=?",form.getFirstValue("lastname"),form.getFirstValue("username"));
+			User.update("location=?","username=?",form.getFirstValue("location"),form.getFirstValue("username"));
+			User.update("bio=?","username=?",form.getFirstValue("bio"),form.getFirstValue("username"));
+			User.update("phone=?","username=?",form.getFirstValue("phone"),form.getFirstValue("username"));
+			User.update("email=?","username=?",form.getFirstValue("email"),form.getFirstValue("username"));
 			return u.toJson(true,"firstname","lastname","location","bio","phone","email");
 		}else{
 			JSONObject json = new JSONObject();
