@@ -95,7 +95,9 @@ public class UserResource extends DBResource{
 			User.update("bio=?","username=?",form.getFirstValue("bio"),form.getFirstValue("username"));
 			User.update("phone=?","username=?",form.getFirstValue("phone"),form.getFirstValue("username"));
 			User.update("email=?","username=?",form.getFirstValue("email"),form.getFirstValue("username"));
-			return u.toJson(true,"firstname","lastname","location","bio","phone","email");
+			User.update("imgpath=?","username=?",form.getFirstValue("imgpath"),form.getFirstValue("username"));
+			User.update("coverpath=?","username=?",form.getFirstValue("coverpath"),form.getFirstValue("username"));
+			return u.toJson(true,"firstname","lastname","location","bio","phone","email","imgpath","coverpath");
 		}else{
 			JSONObject json = new JSONObject();
 			try {

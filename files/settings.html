@@ -46,14 +46,16 @@
 				$('#id_biography').val(userdata.bio);
 				$('#id_contact_email').val(userdata.email);
 				$('#id_contact_number').val(userdata.phone);
+				$('#upload-avatar-url').val(userdata.imgpath);
+				$('#upload-cover-url').val(userdata.coverpath);
 				});
 			}
 
-			var updateUser = function(usernm,first,last,loc,biog,mail,phon){
+			var updateUser = function(usernm,first,last,loc,biog,mail,phon,img,cover){
 			$.ajax({
 				type:'PUT',
 				url:'/user',
-				data: {username: usernm,firstname: first,lastname: last,location: loc,bio: biog,email: mail,phone: phon}
+				data: {username: usernm,firstname: first,lastname: last,location: loc,bio: biog,email: mail,phone: phon,imgpath: img,coverpath: cover}
 			}).done(function(data){
 				data = JSON.parse(data);
 				console.log(data);
@@ -75,7 +77,9 @@
 				var bio = $('#id_biography').val();
 				var email = $('#id_contact_email').val();
 				var phone = $('#id_contact_number').val();
-				updateUser(username,firstname,lastname,location,bio,email,phone);
+				var img = $('#upload-avatar-url').val();
+				var cover = $('#upload-cover-url').val();
+				updateUser(username,firstname,lastname,location,bio,email,phone,img,cover);
 			});
 
 			$('#logo').click(function(e){

@@ -17,9 +17,15 @@ $(document).ready(function(){
 			data: {username: user,password: pwd}
 		}).done(function(data){
 			// Crea una cookie con el nombre de usuario, que dura 1 semana y es válida para todo el sitio
-			$.cookie('User_username',user, { expires: 7, path: '/' });			
-			location.href= window.location+"dashboard";
-			$('#login').trigger('reveal:close');
+			data = JSON.parse(data);
+			if(data.error=="false"){
+				$.cookie('User_username',user, { expires: 7, path: '/' });			
+				location.href= window.location+"dashboard";
+				$('#login').trigger('reveal:close');
+			}
+			else{
+				console.log("Contraseña errónea");
+			}
 		});
 	};
 

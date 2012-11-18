@@ -19,7 +19,7 @@ import servicios.UsersResource;
 public class Main extends Application {
 	// Ubicación para la raíz del sitio.
 	//public static final String ROOT_URI = "file:///home/gabo/Documentos/betagrafica-app/files";
-	public static final String ROOT_URI = "file:///home/ernesto/workspace/betagrafica-app/files";
+	public static final String ROOT_URI = "file:///home/ernesto/workspace/betagrafica/files";
 	//public static final String ROOT_URI = "file:///home/gustavo/workspace/betagrafica-app/files";
 	
 	public Restlet createInboundRoot(){

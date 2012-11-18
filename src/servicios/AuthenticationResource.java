@@ -28,19 +28,15 @@ public class AuthenticationResource extends DBResource {
 	}
 
 	@Post
-	public String login(Representation entity) throws NoSuchAlgorithmException{
+	public String login(Representation entity) throws NoSuchAlgorithmException, JSONException{
 		Form form = new Form(entity);
 		String username = form.getFirstValue("username");
 		String password = encryptPassword(form.getFirstValue("password"));
 		User u = (User)User.findFirst("username = ? and password = ?", username,password);
 		if(u != null){
-			//El usuario se encontro, se debe crear la cookie que muestra que se logeo
-			/*getRequest().getCookies().clear();
-			Cookie element = new Cookie();
-
-			getRequest().getCookies().createEntry("User_username", username);
-			getRequest().getCookies().createEntry("User_id", u.get("id").toString());*/
-			return "{error:false,login:true}";
+			JSONObject json = new JSONObject();
+			json.put("error","false");
+			return json.toString();
 		}else{
 			//Usuario no existe o mal email y/o password
 			JSONObject json = new JSONObject();
