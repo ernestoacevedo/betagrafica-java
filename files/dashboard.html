@@ -8,7 +8,7 @@
 	<meta name="description" content="Betagrafica" />
 	<meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1"/>
 
-	<!--css-->
+	<!--css -->
 	<link rel="stylesheet" href="assets/css/bootstrap.css">
 	<link rel="stylesheet" href="assets/css/bootstrap-responsive.css">
 	<link rel="stylesheet" href="assets/css/style.css">
@@ -45,20 +45,6 @@
 				
 			}
 
-			// Crea un array con los usuarios y los asigna aleatoriamente a los cuadros de actualización
-			/*var users = new Array();
-			$.get("/users",function(data){
-				usuarios = JSON.parse(data);
-				$.each(usuarios,function(k,user){
-					users[k] = user.username;
-				});
-				$('a.user').each(function (index){
-					number = Math.floor(Math.random()*(1+users.length));
-					$(this).html(users[number]);
-					$(this).attr('href','/profile/'+users[number]+'/');
-				});
-			});	*/
-
 			// Crea un array con los portafolios recientes
 			var recents = new Array();
 			$.get("/recents",function(data){
@@ -68,7 +54,7 @@
 					var title = port.title;
 					var cover = port.cover;
 					console.log(cover);
-					$('#site-activity').append("<!--object--><a href='single.html'><div class='work-object span4 hover'><div class='work-cover'><div class='image' style='background-image:url('"+cover+"')'></div></div><div class='activity'><div class='user-activity'><a href='/profile/"+author+"/' class='user'>"+author+"</a><p class='action'>actualizó</p><a href='#' class='title'>"+title+"</a></div></div></div></a>");
+					$('#site-activity').append("<!--object--><a href='single.html'><div class='work-object span4 hover'><div class='work-cover'><div class='image' style='background-image:url('"+cover+"')'></div></div><div class='activity'><div class='user-activity'><a href='/profile/"+author+"/' class='user'>"+author+"</a><p class='action'>creó</p><a href='#' class='title'>"+title+"</a></div></div></div></a>");
 				});
 			});
 		});
@@ -127,7 +113,7 @@
 				<div class="span12">
 
 					<div class="pull-right">
-						<a class="create" href="create.html">
+						<a class="create" href="/create">
 							<div class="create-btn">+</div>
 							Crear Proyecto
 						</a>

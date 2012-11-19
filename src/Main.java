@@ -9,6 +9,7 @@ import org.restlet.resource.Directory;
 import org.restlet.routing.Router;
 
 import servicios.AuthenticationResource;
+import servicios.PortfolioResource;
 import servicios.PortfoliosResource;
 import servicios.SettingsResource;
 import servicios.UserResource;
@@ -20,20 +21,18 @@ public class Main extends Application {
 	// Ubicación para la raíz del sitio.
 	//public static final String ROOT_URI = "file:///home/gabo/Documentos/betagrafica-app/files";
 	public static final String ROOT_URI = "file:///home/ernesto/workspace/betagrafica/files";
-	//public static final String ROOT_URI = "file:///home/gustavo/workspace/betagrafica-app/files";
+	//public static final String ROOT_URI = "file:///home/gustavo/workspace/betagrafica/files";
 	
 	public Restlet createInboundRoot(){
 		Directory dir = new Directory(getContext(),ROOT_URI);
 		Directory dashboard = new Directory(getContext(),ROOT_URI);
-		Directory portfolio = new Directory(getContext(),ROOT_URI);
 		Directory profile = new Directory(getContext(),ROOT_URI);
 		Directory settings = new Directory(getContext(),ROOT_URI);
 		Directory create = new Directory(getContext(),ROOT_URI);
-		settings.setIndexName("settings");
-		portfolio.setIndexName("portfolio");
 		dashboard.setIndexName("dashboard");
 		profile.setIndexName("profile");
 		create.setIndexName("create");
+		settings.setIndexName("settings");
 		dir.setListingAllowed(true);
 		Router router = new Router(getContext());
 		router.attachDefault(dir);
@@ -43,7 +42,7 @@ public class Main extends Application {
 		router.attach("/users",UsersResource.class);
 		router.attach("/recents",PortfoliosResource.class);
 		router.attach("/dashboard",dashboard);
-		router.attach("/portfolio",portfolio);
+		router.attach("/portfolio",PortfolioResource.class);
 		router.attach("/settings",settings);
 		router.attach("/profile/{username}",profile);
 		router.attach("/create",create);

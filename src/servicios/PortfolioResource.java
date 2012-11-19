@@ -39,8 +39,9 @@ public class PortfolioResource extends DBResource {
 		pfl.set("title",form.getFirstValue("title"));
 		pfl.set("created",form.getFirstValue("created"));
 		pfl.set("author",form.getFirstValue("author"));
+		pfl.set("cover",form.getFirstValue("cover"));
 		if(pfl.saveIt()){
-			return pfl.toJson(true,"title");
+			return pfl.toJson(true,"id","title","author","created","cover");
 		}
 		else{
 			JSONObject json = new JSONObject();
