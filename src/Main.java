@@ -12,6 +12,7 @@ import servicios.AuthenticationResource;
 import servicios.PortfolioResource;
 import servicios.PortfoliosResource;
 import servicios.SettingsResource;
+import servicios.UserPortfoliosResource;
 import servicios.UserResource;
 import servicios.UsersResource;
 
@@ -47,8 +48,10 @@ public class Main extends Application {
 		router.attach("/profile/{username}",profile);
 		router.attach("/create",create);
 		router.attach("/login",AuthenticationResource.class);
-		//router.attach("/upload",UploadResource.class);
 		router.attach("/update",SettingsResource.class);
+		router.attach("/fetch/{username}",UserPortfoliosResource.class);
+		//router.attach("/upload",UploadResource.class);
+		
 		
 
 		return router;
