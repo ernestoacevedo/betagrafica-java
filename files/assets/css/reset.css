@@ -56,10 +56,11 @@ html {
 /*BODY*/
 body{
   line-height: 1.2em;
-  background: #F4f4f4;
+  background-color: #F4F4F4;
   width: 100%;
   display: block;
   position: relative;
+  background-image: url(../images/bg01.png);
   top: 0;
   height: 100%;
 }

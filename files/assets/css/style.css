@@ -507,11 +507,12 @@ body.project{
     width: 100%;
     margin: 0;
     padding: 0;
+    display: block;
+    height: auto;
 }
 
 .author .user-info{
     position: absolute;
-;
     text-shadow: 0 1px 0 rgba(255, 255, 255, .4);
 }
 .light{
@@ -535,29 +536,12 @@ body.project{
     text-align: center;
     position: relative;
     border-radius: 3px;
+    padding-top: 80px;
+    padding-bottom: 80px;
 }
 
 .project-image{
     padding: 0;
-    margin-top: 80px;
-    margin-bottom: 80px;
-}
-
-.fullscreen-icon{
-    height: 30px;
-    width: 30px;
-    background-image: url(../images/fullscreen.svg);
-    background-size: cover;
-    position: relative;
-    top: -60px;
-    right: 0;
-    float: right;
-    opacity: .3;
-    margin: 0;
-    padding: 0;
-}
-.fullscreen-icon:hover{
-    opacity: .6;
 }
 
 .item-info{
@@ -568,6 +552,60 @@ body.project{
 .item-description{
     color: #777;
 }
+
+.single-image{
+    position: relative;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: 0;
+}  
+
+.hover-layer {
+    background: #fff;
+    background: rgba(255, 255, 255, .7);
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    bottom: 20px;
+    right: 20px;
+    text-align: center;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    opacity: 0;
+    background-image: url(../images/fullscreen.svg);
+    background-repeat:no-repeat;
+    background-size: 50px;
+    background-position: center;
+    back
+}
+
+.single-image a:hover .hover-layer {
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+    filter: alpha(opacity=80);
+    opacity: .9;
+}
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*profile*/
 .user-info{
