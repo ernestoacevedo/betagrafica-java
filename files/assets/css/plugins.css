@@ -57,15 +57,14 @@
 		font-size: 18px;
 		margin: 0 0 5px;
 		padding: 0px 0 0;
-	
 		float: left;
 		text-align: right;
-		width: 190px;
+		width: 210px;
 }
 
 	.reveal-modal input{
 		height: 30px;
-		width: 400px;
+		width: 390px;
 		margin: 0px 0 15px;
 		color: #666;
 		font-size: 18px;
