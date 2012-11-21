@@ -35,7 +35,8 @@ $(document).ready(function(){
 			url: '/portfolio',
 			data: {author: user,title: titl,cover: path,created: date}
 		}).done(function(data){
-			console.log("Portafolio creado");
+			alert("Portafolio creado");
+			window.location.href = "/dashboard";
 		});
 	};
 

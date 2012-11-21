@@ -45,15 +45,20 @@
 				
 			}
 
-			// Crea un array con los portafolios recientes
-			var recents = new Array();
+			// Obtiene y genera los contenedores para los últimos 20 portafolios creados
 			$.get("/recents",function(data){
 				portfolios = JSON.parse(data);
 				$.each(portfolios,function(k,port){
 					var author = port.author;
 					var title = port.title;
 					var cover = port.cover;
-					console.log(cover);
+					/* Deja las imágenes en el formato ../images/work-cover-01.jpg 
+					if(port.cover!="null"){
+						var out = port.cover.indexOf("/images")
+						var cut = port.cover.slice(out);
+						cover = ".."+cut;
+						console.log(cover);
+					}*/
 					$('#site-activity').append("<!--object--><a href='single.html'><div class='work-object span4 hover'><div class='work-cover'><div class='image' style='background-image:url('"+cover+"')'></div></div><div class='activity'><div class='user-activity'><a href='/profile/"+author+"/' class='user'>"+author+"</a><p class='action'>creó</p><a href='#' class='title'>"+title+"</a></div></div></div></a>");
 				});
 			});
