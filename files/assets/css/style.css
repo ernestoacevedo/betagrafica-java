@@ -116,7 +116,7 @@
     top: 0;
     float: left;
     cursor: pointer;
-    border-radius: 0px 9px 9px 9px;
+    border-radius: 0;
 }
 
 .header #logo p{
