@@ -568,3 +568,17 @@ filter: alpha(opacity=95);
 	font-family: 'HelveticaLTStdLight';
 	filter: alpha(opacity=40);
 }
+
+/*iscroll*/
+body,html{
+}
+#wrapper {
+    position:absolute; z-index:1;
+    top:0; 
+    bottom:0; 
+    left:0;
+    right: 0;
+    width:100%;
+    background:transparent;
+    overflow:auto;
+}

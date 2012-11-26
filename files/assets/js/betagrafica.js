@@ -29,17 +29,6 @@ $(document).ready(function(){
 		});
 	};
 
-	var createPortfolio = function(user,titl,path,date){
-		$.ajax({
-			type: 'POST',
-			url: '/portfolio',
-			data: {author: user,title: titl,cover: path,created: date}
-		}).done(function(data){
-			alert("Portafolio creado");
-			window.location.href = "/dashboard";
-		});
-	};
-
 	$('#join input').keypress(function(e){
 		if ((e.which && e.which == 13) || (e.keyCode && e.keyCode == 13)) {
 			$('#join-button').click();
@@ -80,15 +69,18 @@ $(document).ready(function(){
 		}		
 	});
 
-	$('#create-button').click(function(e){
+	/*$('#create-button').click(function(e){
 		e.preventDefault();
 		e.stopPropagation();
+		
 		var username = $.cookie('User_username');
 		var title = $('#portfolio-title').val();
 		var path = null;
 		var description = null;
 		var today = new Date();
 		var created = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-		createPortfolio(username,title,path,created);
-	});
+		console.log(username,title,path,created);
+		//createPortfolio(username,title,path,created);
+	});*/
+
 });

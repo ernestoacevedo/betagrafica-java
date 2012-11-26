@@ -95,7 +95,8 @@
   .row {
     margin-left: -30px;
     *zoom: 1;
-  }
+  
+}
   .row:before,
   .row:after {
     display: table;

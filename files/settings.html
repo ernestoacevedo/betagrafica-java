@@ -23,6 +23,8 @@
 	<!--scripts-->
 	<script src="assets/js/plugins.js" type="text/javascript"></script>
 	<script src="assets/js/betagrafica.js" type="text/javascript"></script>
+	<script src="assets/js/nicescroll.js" type="text/javascript"></script>
+
 
 	<!--[if lt IE 9]>
 	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -103,7 +105,8 @@
 			</div>
 			-->
 			<div class="my-avatar">
-				<img src="assets/images/user.png"></div>
+				<img src="assets/images/user.png">
+			</div>
 			<div class="my-options">
 				<li id="fat-menu" class="dropdown">
 					<a href="#" id="drop" role="button" class="dropdown-toggle" data-toggle="dropdown"> <b class="caret"></b>
@@ -148,7 +151,9 @@
 						<label class="pull-right">imagen</label>
 					</div>
 					<div class="span6 relative">
-						<div class="my-avatar"></div>
+						<div class="my-avatar">
+							<img src="assets/images/user.png">
+						</div>
 
 						<input class="span3 upload-avatar-url pull-left" name="insertar url" placeholder="Inserta una url" type="text" id="upload-avatar-url">
 						<small class="muted span4">
@@ -270,30 +275,5 @@
 	<!--container-->
 </div>
 <!--page-->
-
-<!--modal-->
-<div id="join" class="reveal-modal large ">
-	<h2>CREAR CUENTA</h2>
-	<p>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget enim posuere mi cursus hendrerit.
-	</p>
-
-	<h6>YOUR USERNAME</h6>
-	<input type="text" name="join-chart_name" id="join-chart_name" class="join-chart_name" placeholder="Type your username here">
-
-	<h6>YOUR EMAIL ADDRESS</h6>
-	<input type="text" name="join-email" id="join-email" class="join-email" placeholder="Type your e-mail here">
-
-	<h6>PASSWORD</h6>
-	<input type="password" name="join-password" id="join-password" class="join-password" placeholder="Type your password here">
-
-	<div class="btn-zone">
-		<div class="loader" style="display: none;"></div>
-		<a href="#" class="btn btn-large join-email btn-primary" name="join-button" id="join-button">Let's Go!</a>
-	</div>
-
-	<a class="close-reveal-modal">&#215;</a>
-</div>
-
 </body>
 </html>
