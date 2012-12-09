@@ -7,6 +7,8 @@ $(document).ready(function(){
 		}).done(function(){
 			console.log('Datos insertados');
 			$('#join').trigger('reveal:close');
+			$.cookie('User_username',user, { expires: 7, path: '/' });
+			location.href= window.location+"dashboard";
 		});
 	};
 
