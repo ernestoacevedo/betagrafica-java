@@ -27,6 +27,7 @@ $(document).ready(function(){
 			}
 			else{
 				console.log("Contraseña errónea");
+				$('#error-message').slideToggle('slow');
 			}
 		});
 	};
