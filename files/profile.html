@@ -77,7 +77,7 @@
 					var title = port.title;
 					var cover = port.cover;
 					console.log(cover);
-					$('#portfolio-data').append("<!--object--><a href='single.html'><div class='work-object span4 hover'><div class='work-cover'><div class='image' style='background-image:url('"+cover+"')'></div></div><div class='activity'><div class='user-activity'><a href='/profile/"+author+"/' class='user'>"+author+"</a><p class='action'>creó</p><a href='#' class='title'>"+title+"</a></div></div></div></a>");
+					$('#portfolio-data').append("<a href='single.html'><div class='work-object span4 hover'><div class='work-cover'><div class='image'><img src='"+cover+"'></div></div><div class='activity'><div class='user-activity'><a href='/profile/"+author+"/' class='user'>"+author+"</a><p class='action'>creó</p><a href='#' class='title'>"+title+"</a></div></div></div></a>");
 				});
 			});
 		});

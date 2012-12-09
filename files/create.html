@@ -19,11 +19,13 @@
 	<script src="assets/js/jquery-1.7.1.min.js"></script>
 	<!--plugins-->
 	<script src="assets/js/bootstrap.js" type="text/javascript"></script>
-	<!--<script src="assets/js/jquery.cookie.js" type="text/javascript"></script>-->
+	<script src="assets/js/jquery.cookie.js" type="text/javascript"></script>
+	<script src="http://malsup.github.com/jquery.form.js"></script>
 	<!--scripts-->
 	<script src="assets/js/plugins.js" type="text/javascript"></script>
 	<script src="assets/js/betagrafica.js" type="text/javascript"></script>
 	<script src="assets/js/nicescroll.js" type="text/javascript"></script>
+
 
 
 	<!--[if lt IE 9]>
@@ -43,6 +45,31 @@
 				$('.my-avatar img').attr('src',userdata.imgpath);
 				var dir_user = $('#menu-profile').attr('href');
 				$('#menu-profile').attr('href',dir_user+'/'+$.cookie('User_username'));
+			});
+
+			var createPortfolio = function(user,titl,path,date){
+				$.ajax({
+					type: 'POST',
+					url: '/portfolio',
+					data: {author: user,title: titl,cover: path,created: date}
+				}).done(function(data){
+					alert("Portafolio creado");
+					window.location.href = "/dashboard";
+				});
+			};
+
+			$('#createForm').ajaxForm(function(data_json){
+				json = JSON.parse(data_json);
+				$.each(json,function(k,data){
+					console.log(data.path);
+				});
+				var username = $.cookie('User_username');
+				var title = $('#portfolio-title').val();
+				var path = null;
+				var description = null;
+				var today = new Date();
+				var created = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+				console.log(username,title,path,created);
 			});
 		});
 	</script>
@@ -88,7 +115,7 @@
 <div class="container">
 	<div class="row create">
 		
-		<form class="form create-project">
+		<form id="createForm" action="somosnueve.com/betagrafica/files/upload.php" method="POST" enctype="multipart/form-data" class="form create-project">
 			<div class="row grid20">
 				<h6 class="span6">Crear Portada</h6>
 				<div class="span12 project-item shadow grid-in40">
@@ -98,7 +125,7 @@
 								<div class="span4 thumbnail grid10"></div>
 							</div>
 							<div class="row">
-								<input class="upload-img pull-left" type="file" name="upfile">
+								<input class="upload-img pull-left" type="file" name="coverfile">
 								<small class="conditions muted pull-right">Ancho maximo: 1200px.</small>
 							</div>
 						</div>
@@ -123,7 +150,7 @@
 								<div class="span4 thumbnail grid10"></div>
 							</div>
 							<div class="row">
-								<input class="upload-img pull-left" type="file" name="upfile">
+								<input class="upload-img pull-left" type="file" name="images">
 								<small class="conditions muted pull-right">Ancho maximo: 1200px.</small>
 							</div>
 						</div>
@@ -140,7 +167,7 @@
 
 				<div class="horizontal-line span12"></div>
 
-				<div class="row">
+				<!--div class="row">
 					<div class="span2 offset1">
 						<div class="row">
 		  					<a href="#" id="add-image" class="span2 add-image btn">
@@ -150,10 +177,10 @@
 	  				</div>
 				</div>
 
-				<div class="horizontal-line span12"></div>
+				<div class="horizontal-line span12"></div-->
 
 				<div class="span4 offset4">
-  					<input id="create-button" class="span4 btn btn-success" value="Publicar">
+  					<input id="create-button" type="submit" class="span4 btn btn-success" value="Publicar">
  				</div>
 
 
