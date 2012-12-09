@@ -64,10 +64,10 @@
     margin-right: 0;
 }
 
-.hidden{
+.hidden, .hide{
     display: none;
+    display: none!important;
 }
-
  /*-------landing-page*/
 
 /*header*/
