@@ -7,6 +7,7 @@ $(document).ready(function(){
 		}).done(function(){
 			console.log('Datos insertados');
 			$('#join').trigger('reveal:close');
+			// Crea una cookie y redirecciona al dashboard
 			$.cookie('User_username',user, { expires: 7, path: '/' });
 			location.href= window.location+"dashboard";
 		});
@@ -26,12 +27,12 @@ $(document).ready(function(){
 				$('#login').trigger('reveal:close');
 			}
 			else{
-				console.log("Contraseña errónea");
 				$('#error-message').slideToggle('slow');
 			}
 		});
 	};
 
+	// Activa la función de registro al presionar enter
 	$('#join input').keypress(function(e){
 		if ((e.which && e.which == 13) || (e.keyCode && e.keyCode == 13)) {
 			$('#join-button').click();
@@ -39,6 +40,7 @@ $(document).ready(function(){
 		}
 	});
 
+	// idéntico al anterior, pero activa el login
 	$('#login input').keypress(function(e){
 		if ((e.which && e.which == 13) || (e.keyCode && e.keyCode == 13)) {
 			$('#login-button').click();

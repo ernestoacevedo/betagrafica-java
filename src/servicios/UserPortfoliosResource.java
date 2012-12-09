@@ -5,8 +5,6 @@ import modelos.Portfolio;
 import org.javalite.activejdbc.LazyList;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.restlet.data.Form;
-import org.restlet.representation.Representation;
 import org.restlet.resource.Get;
 
 public class UserPortfoliosResource extends DBResource{

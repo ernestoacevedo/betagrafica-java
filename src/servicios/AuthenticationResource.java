@@ -41,7 +41,7 @@ public class AuthenticationResource extends DBResource {
 			//Usuario no existe o mal email y/o password
 			JSONObject json = new JSONObject();
 			try {
-				json.put("error", "Nombre de usuario o contrase√±a err√≥nea");
+				json.put("error", "Nombre de usuario o contraseña errónea");
 			} catch (JSONException e) {
 				// TODO Auto-generated catch block
 				return "{error:"+e.getMessage()+"}";
