@@ -73,7 +73,7 @@
 			});*/
 			// Agrega un campo para añadir una nueva imágenes
 			$('#add-image').click(function(){
-				$('#add-area').prepend('<h6 class="span6 offset1">Agregar Imagen</h6><div class="span12 grid-in20"><div class="row"><div class="span4 offset1"><div class="row"><div class="span4 thumbnail grid10"></div></div><div class="row"><input class="upload-img pull-left" type="file" name="images"><small class="conditions muted pull-right">Ancho maximo: 1200px.</small></div></div><div class="span6"><input class="span6 grid20 image-title" placeholder="Título de imagen" maxlength="35"/><small class="muted pull-right">35 max</small><textarea row="2" class="span6 grid20 image-description" placeholder="Escribe aquí una pequeña descripción de tu proyecto" maxlength="140"></textarea><small class="muted pull-right">140 max</small></div></div></div>');
+				$('#add-area').prepend('<h6 class="span6 offset1">Agregar Imagen</h6><div class="span12 grid-in20"><div class="row"><div class="span4 offset1"><div class="row"><div class="span4 thumbnail grid10"></div></div><div class="row"><input class="upload-img pull-left" type="file" name="images"><small class="conditions muted pull-right">Ancho maximo: 1200px.</small></div></div><div class="span6"><input class="span6 grid20 image-title" placeholder="Título de imagen" maxlength="35"/><small class="muted pull-right">35 max</small><textarea row="2" class="span6 grid20 image-description" placeholder="Escribe aquí una pequeña descripción de tu proyecto" maxlength="140"></textarea><small class="muted pull-right">140 max</small></div></div></div>').fadeIn('slow');
 			});
 		});
 	</script>
@@ -174,7 +174,7 @@
 				<div id="add-area" class="row">
 					<div class="span2 offset1">
 						<div class="row">
-		  					<a href="#" id="add-image" class="span2 add-image btn">
+		  					<a id="add-image" class="span2 add-image btn">
 		  						Agregar imagen
 		  					</a>
 		  				</div>
@@ -199,29 +199,5 @@
 <!--page-->
 
 <script type="text/javascript">$('[rel=tooltip]').tooltip();</script>
-<!--modal-->
-<div id="join" class="reveal-modal large ">
-<h2>CREAR CUENTA</h2>
-<p>
-	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget enim posuere mi cursus hendrerit.
-</p>
-
-<h6>YOUR USERNAME</h6>
-<input type="text" name="join-chart_name" id="join-chart_name" class="join-chart_name" placeholder="Type your username here">
-
-<h6>YOUR EMAIL ADDRESS</h6>
-<input type="text" name="join-email" id="join-email" class="join-email" placeholder="Type your e-mail here">
-
-<h6>PASSWORD</h6>
-<input type="password" name="join-password" id="join-password" class="join-password" placeholder="Type your password here">
-
-<div class="btn-zone">
-	<div class="loader" style="display: none;"></div>
-	<a href="#" class="btn btn-large join-email btn-primary" name="join-button" id="join-button">Let's Go!</a>
-</div>
-
-<a class="close-reveal-modal">&#215;</a>
-</div>
-
 </body>
 </html>
