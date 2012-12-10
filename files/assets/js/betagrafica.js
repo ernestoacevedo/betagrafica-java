@@ -27,7 +27,7 @@ $(document).ready(function(){
 				$('#login').trigger('reveal:close');
 			}
 			else{
-				$('#error-message').slideToggle('slow');
+				$('#error-message').slideToggle('fast');
 			}
 		});
 	};
