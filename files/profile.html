@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" id="betagrafica" class="no-js">
+<html lang="es" id="betagrafica" class="no-js">
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -34,10 +34,15 @@
 				var login_name = $.cookie('User_username');
 				$.get("/user/"+login_name,function(data){
 				var userdata = JSON.parse(data);
-				$('.my-avatar img').attr('src',userdata.imgpath);
+				if(userdata.imgpath!="null"){
+					$('.my-avatar img').attr('src',userdata.imgpath);
+				}
 				var dir_user = $('#menu-profile').attr('href');
 				$('#menu-profile').attr('href',dir_user+'/'+$.cookie('User_username'));
 				});
+			}
+			else{
+				$('#menu-profile').css('display','none');
 			}
 			var count = 0;
 			var limit = 0;
@@ -56,9 +61,15 @@
 			$.get("/user/"+fetchUser,function(data){
 			var userdata = JSON.parse(data);
 			// Seteo de variables dentro de la página
+			document.title = "Betagráfica | Perfil de "+userdata.username;
 			$('h6.username').html("<em class='light'>"+userdata.username+"</em>&nbsp;|&nbsp;"+userdata.firstname+" "+userdata.lastname+"");
-			$('div.user-avatar img').attr('src',userdata.imgpath);
-			$('div.user-cover').attr('style','background-image:url('+userdata.coverpath+')');
+			if(userdata.imgpath!="null"){
+				$('div.user-avatar img').attr('src',userdata.imgpath);
+			}
+			if(userdata.coverpath!="null"){
+				$('div.user-cover').attr('style','background-image:url('+userdata.coverpath+')');
+			}
+			
 			$('p.biography').html(userdata.bio);
 			});
 

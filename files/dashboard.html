@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" id="betagrafica" class="no-js">
+<html lang="es" id="betagrafica" class="no-js">
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -39,7 +39,9 @@
 				$('.estado').html('<p class="welcome">Hola <a href="/profile/'+user+'/" class="light">'+user+'</a>,<br>bienvenid@ a casa :)</p>');
 				$.get("/user/"+user,function(data){
 					var userdata = JSON.parse(data);
+					if(userdata.imgpath!="null"){
 					$('.my-avatar img').attr('src',userdata.imgpath);
+					}
 					var dir_user = $('#menu-profile').attr('href');
 					$('#menu-profile').attr('href',dir_user+'/'+$.cookie('User_username'));
 				});
@@ -142,7 +144,7 @@
 
 						<div class="tab-pane fade active in" id="activity">
 							<div id="site-activity" class="section site-activity">
-								<h6 class="section-title span12">Ultimas actualizaciones</h6>
+								<h6 class="section-title span12">Últimas actualizaciones</h6>
 								<!--object-->
 							</div>
 							<!--site-activity-->

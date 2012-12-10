@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" id="betagrafica" class="no-js">
+<html lang="es" id="betagrafica" class="no-js">
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -47,7 +47,9 @@
 			}
 			$.get("/user/"+user,function(data){
 				var userdata = JSON.parse(data);
-				$('.my-avatar img').attr('src',userdata.imgpath);
+				if(userdata.imgpath!="null"){
+					$('.my-avatar img').attr('src',userdata.imgpath);
+				}
 				var dir_user = $('#menu-profile').attr('href');
 				$('#menu-profile').attr('href',dir_user+'/'+$.cookie('User_username'));
 			});
