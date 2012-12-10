@@ -32,6 +32,17 @@ $(document).ready(function(){
 		});
 	};
 
+	var createPortfolio = function(user,titl,path,date){
+		$.ajax({
+			type: 'POST',
+			url: '/portfolio',
+			data: {author: user,title: titl,cover: path,created: date}
+			}).done(function(data){
+				alert("Portafolio creado");
+				window.location.href = "/dashboard";
+			});
+	};
+
 	// Activa la función de registro al presionar enter
 	$('#join input').keypress(function(e){
 		if ((e.which && e.which == 13) || (e.keyCode && e.keyCode == 13)) {
@@ -72,6 +83,19 @@ $(document).ready(function(){
 		if (redi){
 			location.href = "/";
 		}		
+	});
+
+	$('#create-button').click(function(e){
+		e.preventDefault();
+		e.stopPropagation();
+		var username = $.cookie('User_username');
+		var title = $('#portfolio-title').val();
+		var path = $('#portfolio-description').val();
+		var description = null;
+		var today = new Date();
+		var created = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+		console.log(username,title,path,created);
+		createPortfolio(username,title,path,created);
 	});
 
 	/*$('#create-button').click(function(e){

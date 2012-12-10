@@ -16,6 +16,41 @@
 	<!--[if lt IE 9]>
 	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
+	<script>
+		$(document).ready(function(){
+			var login_name = $.cookie('User_username');
+			if(login_name!=null){
+				$.get("/user/"+login_name,function(data){
+					var userdata = JSON.parse(data);
+					$('.my-avatar img').attr('src',userdata.imgpath);
+					var dir_user = $('#menu-profile').attr('href');
+					$('#menu-profile').attr('href',dir_user+'/'+$.cookie('User_username'));
+				});
+			}
+			var count = 0;
+			var limit = 0;
+			var number = window.location.href;
+			for (var i=0;i<number.length; i++) {
+				if(number[i]=='/'){
+					count++;
+					if(count==4){
+						limit = i;
+					}
+				}
+			};
+			console.log(limit);
+			number = number.substring(limit+1,number.length-1);
+			console.log(number);
+			/*$.get("/user/"+fetchUser,function(data){
+			var userdata = JSON.parse(data);
+			// Seteo de variables dentro de la página
+			$('h6.username').html("<em class='light'>"+userdata.username+"</em>&nbsp;|&nbsp;"+userdata.firstname+" "+userdata.lastname+"");
+			$('div.user-avatar img').attr('src',userdata.imgpath);
+			$('div.user-cover').attr('style','background-image:url('+userdata.coverpath+')');
+			$('p.biography').html(userdata.bio);
+			});*/
+		});
+	</script>
 
 </head>
 

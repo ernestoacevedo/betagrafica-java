@@ -63,6 +63,7 @@
 				console.log(data);
 				if(data.error!="true"){
 					alert('Datos actualizados correctamente');
+					window.location.href = "/settings";
 				}else{
 					alert(data.error);
 				}
